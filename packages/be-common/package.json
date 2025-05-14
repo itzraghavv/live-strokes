@@ -1,0 +1,24 @@
+{
+  "name": "@repo/be-common",
+  "version": "1.0.0",
+  "main": "index.js",
+  "exports": {
+    "./config": "./config.ts"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "dotenv": "^16.5.0",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/node": "^22.15.17"
+  }
+}
