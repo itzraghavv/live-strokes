@@ -94,6 +94,9 @@ importers:
       '@repo/be-common':
         specifier: workspace:*
         version: link:../../packages/be-common
+      '@repo/db':
+        specifier: workspace:*
+        version: link:../../packages/db
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config

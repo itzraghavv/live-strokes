@@ -131,6 +131,26 @@ app.post("/api/v1/create-room", AuthMiddleware, async (req, res) => {
   }
 });
 
-//TODO - Get route to view the room  GET /room="12"
+app.get("/api/v1/chats/:roomId", AuthMiddleware, async (req, res) => {
+  const roomId = Number(req.params.roomId);
+  try {
+    const chats = await prismaClient.chat.findMany({
+      where: {
+        roomId: roomId,
+      },
+      orderBy: { id: "desc" },
+      take: 50,
+    });
+
+    res.json({
+      chats,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(403).json({
+      message: "Failed to get chats",
+    });
+  }
+});
 
 app.listen(3001);
